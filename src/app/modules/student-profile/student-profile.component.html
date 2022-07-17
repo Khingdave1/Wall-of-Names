@@ -1,0 +1,83 @@
+<!-- hero app -->
+<section class="sect hero">
+  <div class="container">
+    <div class="breadcrumb dis-flex">
+      <p class="dis-flex clickable" routerLink="/">
+        Home
+        <img
+          src="../../../assets/img/svg/bx-chevron-right.svg"
+          alt="icon"
+          class="arrow-right"
+        />
+      </p>
+      <p class="dis-flex clickable" routerLink="/alumni">
+        Students
+        <img
+          src="../../../assets/img/svg/bx-chevron-right.svg"
+          alt="icon"
+          class="arrow-right"
+        />
+      </p>
+      <h4 class="hero_content_title">{{ currentItem.name }}</h4>
+    </div>
+  </div>
+</section>
+
+<section class="sect student_profile">
+  <div class="container">
+    <div class="student_pic">
+      <img [src]="currentItem.image" alt="image" />
+      <h4>{{ currentItem.name }}</h4>
+      <p>Alumni</p>
+    </div>
+    <div class="student_details">
+      <div class="student_details_head">
+        <h3>Details</h3>
+      </div>
+      <div class="student_details_body">
+        <div class="column">
+          <div class="fields">
+            <h4>Name</h4>
+            <p>{{ currentItem.name }}</p>
+          </div>
+          <div class="fields">
+            <h4>Email Address</h4>
+            <p>{{ currentItem.email }}</p>
+          </div>
+          <div class="fields">
+            <h4>Phone Number</h4>
+            <p>{{ currentItem.phoneNumber }}</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="fields">
+            <h4>Faculty</h4>
+            <p>Science & Tech</p>
+          </div>
+          <div class="fields">
+            <h4>Department</h4>
+            <p>Food Technology</p>
+          </div>
+          <div class="fields">
+            <h4>Graduation Year</h4>
+            <p>2018</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="fields">
+            <h4>Address</h4>
+            <p>45 Park Avenue, Behind Barracks</p>
+          </div>
+          <div class="fields">
+            <h4>Country</h4>
+            <p>Nigeria</p>
+          </div>
+          <div class="fields">
+            <h4>State of Origin</h4>
+            <p>Ogun</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

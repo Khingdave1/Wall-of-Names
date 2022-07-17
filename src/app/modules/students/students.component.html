@@ -1,0 +1,101 @@
+<!-- hero app -->
+<div *ngIf="!showDetails">
+  <section class="sect hero">
+    <div class="container wn_flex_content">
+      <div class="hero_content wn_flex_details">
+        <h1 class="hero_content_title">Search Alumni</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+          faucibus magna nisl hendrerit varius. Praesent efficitur nisi ultrices
+          tellus semper vehicula in a tortor.
+        </p>
+        <form action="" class="dis-flex">
+          <div class="input_field dis-flex">
+            <img src="../../../assets/img/svg/Search.svg" alt="" />
+            <input type="text" placeholder="Search" />
+          </div>
+          <button class="btn prim_btn">Search</button>
+        </form>
+      </div>
+      <div class="wn_flex_img">
+        <img src="../../../assets/img/hero_student.png" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <!-- What to do -->
+  <section class="sect what_to">
+    <div class="container">
+      <div class="head" style="text-align: center; margin-bottom: 2rem">
+        <h2>Alumni</h2>
+        <p style="margin-top: 1rem">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          cursus eleifend sem, ac vehicula nisi biben dum id. Nam ut lacus
+          Integer sit amet blandit
+        </p>
+      </div>
+      <div class="filter dis-flex">
+        <div class="filter_area dis-flex">
+          <div class="filter_area_field dis-flex">
+            <img src="../../../assets/img/svg/Search.svg" alt="" />
+            <input
+              type="text"
+              placeholder="Input student name..."
+              [(ngModel)]="name"
+              (input)="search()"
+            />
+          </div>
+          <div class="filter_area_field">
+            <select name="" id="" value="Set">
+              <option value="none" selected disabled hidden>Type</option>
+              <option value="2021">Undergraduate</option>
+              <option value="2020">Postgraduate</option>
+            </select>
+          </div>
+          <div class="filter_area_field">
+            <select name="" id="">
+              <option value="none" selected disabled hidden>Department</option>
+              <option value="Food Technology">Food Technology</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="Mathematics">Mathematics</option>
+            </select>
+          </div>
+          <div class="filter_area_field">
+            <select name="" id="" value="Set">
+              <option value="none" selected disabled hidden>Set</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card_item" *ngFor="let i of alumnis">
+          <img [src]="i.image" alt="" class="profile_pic" />
+          <div class="">
+            <h3>{{ i.name }}</h3>
+            <p class="dis-flex">
+              <img src="../../../assets/img/svg/bx-envelope.svg" alt="" />
+              {{ i.email }}
+            </p>
+            <p class="dis-flex">
+              <img src="../../../assets/img/svg/bx-phone.svg" alt="" />{{
+                i.phoneNumber
+              }}
+            </p>
+          </div>
+          <button class="btn sec_btn" (click)="openShowDetails(i)">
+            View profile
+          </button>
+          <!-- routerLink="/alumni-profile" -->
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<app-student-profile
+  *ngIf="showDetails"
+  [currentItem]="currentItem"
+></app-student-profile>

@@ -1,0 +1,24 @@
+@import '../../../assets/css/variables.scss';
+
+
+.about {
+  background-color:#F8FDFF;
+  .title {
+    h2 {
+      margin-bottom: 1rem;
+    }
+  }
+  @media only screen and (min-width: 670px) {
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .title {
+        flex-basis: 30%;
+      }
+      .content {
+        flex-basis: 65%;
+      }
+    }
+  }
+}
